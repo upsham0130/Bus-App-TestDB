@@ -1,4 +1,4 @@
-from flask import Flask, url_for, render_template, request, jsonify
+from flask import Flask, url_for, render_template, request, jsonify, redirect
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -12,8 +12,18 @@ class NumberTable(db.Model):
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    students = NumberTable.query.all()
+    return render_template("index.html", students=students)
 
+@app.route('/addStudent', methods = ['POST'])
+def addStudent():
+    sName = request.form['sName']
+    sID = request.form['sID']
+    student = NumberTable(studentID = sID, studentName = sName)
+    db.session.add(student)
+    db.session.commit()
+
+    return redirect(url_for('index'))
 
 
 if __name__ == "__main__":

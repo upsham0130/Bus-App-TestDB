@@ -5,12 +5,24 @@
 {% endblock %}
 
 {% block body %}
-  <form action="" method="POST" style="margin: 0 auto; width: 250px">
-    <h1>Search:</h1><br/><br/>
-    <label>First Name:</label><br/>
-    <input type="text" name="firstQuery"/><br/>
-    <label>Last Name:</label><br/>
-    <input type="text" name="lastQuery"/><br/>
-    <input type="submit" value="Search"/>
+  <form action="{{ url_for('addStudent') }}" method="POST" style="margin: 0 auto; width: 250px">
+    <h1>Add Student:</h1><br/><br/>
+    <label>Student Name:</label><br/>
+    <input type="text" name="sName"/><br/>
+    <label>ID Number:</label><br/>
+    <input type="number" name="sID"/><br/>
+    <input type="submit" value="Add"/>
   </form>
+  <table>
+      <tr>
+          <th>ID</th>
+          <th>Name</th>
+      </tr>
+    {% for student in students %}
+        <tr>
+            <td>{{student.studentID}}</td>
+            <td>{{student.studentName}}</td>
+        </tr>
+    {% endfor %}
+  </table>
 {% endblock %}
