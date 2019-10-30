@@ -1,23 +1,21 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block head %}
+<head>
+    <title>NBTHS Bus Signup</title>
+    <link rel = "stylesheet" href="stuff.css">
+    <script defer src="code.js"></script>
+    <link rel="shortcut icon" href="pics/website.png" />
+</head>
 
-  <link rel = "stylesheet" href="{{ url_for('static', filename='css/stuff.css') }}">
-  <script defer src="{{ url_for('static', filename='js/code.js') }}"></script>
-  <link rel="shortcut icon" href="{{ url_for('static', filename='img/website.png') }}" />
-
-{% endblock %}
-
-{% block body %}
-
-
+<body>
 <div id = "bird">
-    <img height = 600px src="{{ url_for('static', filename='img/bird.png') }}">
+    <img height = 600px src="pics/bird.png">
 </div>
 <div class = "nav">
-    <img id="navsign" onmouseover='change(this,"../static/img/boardY.png",true);' onmouseout='change(this,"../static/img/board.png",false);' height = 80px class = "navbox" src="../static/img/board.png">
-    <img id="navroute" onmouseover='change(this,"../static/img/mapY.png",true);' onmouseout='change(this,"../static/img/map.png",false);' height = 80px class = "navbox" src="../static/img/map.png">
-    <a href="https://www.nbtschools.org/" target="_blank"><img onmouseover='change(this,"../static/img/websiteY.png",true);' onmouseout='change(this,"../static/img/website.png",false);' height = 80px class = "navbox" src="../static/img/website.png"></a>
+    <img id="navsign" onmouseover='change(this,"pics/boardY.png",true);' onmouseout='change(this,"pics/board.png",false);' height = 80px class = "navbox" src="pics/board.png">
+    <img id="navroute" onmouseover='change(this,"pics/mapY.png",true);' onmouseout='change(this,"pics/map.png",false);' height = 80px class = "navbox" src="pics/map.png">
+    <a href="https://www.nbtschools.org/" target="_blank"><img onmouseover='change(this,"pics/websiteY.png",true);' onmouseout='change(this,"pics/website.png",false);' height = 80px class = "navbox" src="pics/website.png"></a>
 </div>
 <div id="hub">
     <div class = "hometop">
@@ -29,22 +27,22 @@
     </div>
 
     <div class = "homebottom">
-        <div onmouseover='change(this,"../static/img/boardY.png");' onmouseout='change(this,"../static/img/board.png");' class = "box hover" id = "signup">
-            <img  src="../static/img/board.png" class="topspace" height=160px width=160px> <h1>Signup</h1>
+        <div onmouseover='change(this,"pics/boardY.png");' onmouseout='change(this,"pics/board.png");' class = "box hover" id = "signup">
+            <img  src="pics/board.png" class="topspace" height=160px width=160px> <h1>Signup</h1>
         </div>
             
-        <div onmouseover='change(this,"../static/img/mapY.png");' onmouseout='change(this,"../static/img/map.png");' class = "box hover" id = "routes">
-            <img src="../static/img/map.png" class="topspace" height=160px width=160px> <h1>Routes</h1>
+        <div onmouseover='change(this,"pics/mapY.png");' onmouseout='change(this,"pics/map.png");' class = "box hover" id = "routes">
+            <img src="pics/map.png" class="topspace" height=160px width=160px> <h1>Routes</h1>
         </div>
 
-        <a onmouseover='change(this,"../static/img/websiteY.png");' onmouseout='change(this,"../static/img/website.png");' href="https://www.nbtschools.org/" target="_blank" class = "box hover">
-                <img src="../static/img/website.png" class="topspace" height=160px width=160px> <h1>Website</h1>
+        <a onmouseover='change(this,"pics/websiteY.png");' onmouseout='change(this,"pics/website.png");' href="https://www.nbtschools.org/" target="_blank" class = "box hover">
+                <img src="pics/website.png" class="topspace" height=160px width=160px> <h1>Website</h1>
         </a>
     </div>
 </div>
 <div class="side">
-    <img src="../static/img/blue.png" height="1700px">
-    <img id = "bar" height="35px"src="../static/img/bar.png">
+    <img src="pics/blue.png" height="1700px">
+    <img id = "bar" height="35px"src="pics/bar.png">
     <div class="container" id="navsign_pg">
         <h3 class="whitebox">Bus Signup</h3>
         <form id="clubname">
@@ -62,20 +60,20 @@
             </div>
         </form>
         <div class = "select">
-            <img class="ArrowLeft" src="../static/img/arrow.png" height=32px>
+            <img class="ArrowLeft" src="pics/arrow.png" height=32px>
             <div class="whitebox" style="width:60%; padding:0px 2px; height: 32px;">
                 <h4 class="center" style="padding-top: 3px;" id="sBus">--Select a Bus--</h4>
             </div>
-            <img class="ArrowRight" src="../static/img/arrow.png" height=32px>
+            <img class="ArrowRight" src="pics/arrow.png" height=32px>
         </div>
         <h4 class="whitebox center" id="submit" style="width:25%; background-color: rgb(220, 220, 220); transform: translateY(40px); padding:5px;">Submit</h4>
     </div>
     <div class="container" id="navroute_pg">
         <h3 class="whitebox">Routes</h3>
         <div class="route_bus">
-            <img class="ArrowLeft" src="../static/img/arrow.png" height=46px>
+            <img class="ArrowLeft" src="pics/arrow.png" height=46px>
             <h4 class="whitebox" id="rBus" style="width:60%;padding-left:0px;padding-top:0;font-size:30px;border-top-left-radius:0;border-top-right-radius:0">Bus 1</h4>
-            <img class="ArrowRight" src="../static/img/arrow.png" height=46px>
+            <img class="ArrowRight" src="pics/arrow.png" height=46px>
         </div>
         <div class="whitebox" style="height: 65%; width: 90%; transform: translateY(30px);">
                 <ul class="bus1">
@@ -171,10 +169,12 @@
                     <li>Mount Drive</li>
                 </ul>
             <div style="display:flex;justify-content:space-between;position: absolute;width: 90%;left:5.55%;top:88%;">
-                <img id="back" src="../static/img/back.png" height=30px>
-                <img id="next" src="../static/img/next.png" height=30px>
+                <img id="back" src="pics/back.png" height=30px>
+                <img id="next" src="pics/next.png" height=30px>
             </div>
         </div>
     </div>
 </div>
-{% endblock %}
+</body>
+
+</html>

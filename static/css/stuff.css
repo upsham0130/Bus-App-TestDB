@@ -1,0 +1,225 @@
+/*SCALE EVERYTHING, USE THAT CALC :3*/
+html {
+    background-image: url(../img/Background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment:fixed;
+    font-family: Palatino,Verdana, Geneva, Tahoma, sans-serif;
+}
+body {
+   color: #6D8BC9;
+   overflow: hidden;
+}
+h1 {
+    font-size: 30px;
+    margin: 5px;
+}
+h2 {
+    font-size: 55px;
+    margin: 5px;
+}
+
+.topspace {
+    padding-top: 15px;
+}
+.box {
+    position: relative;
+    display: block;
+    width: fit-content;
+    float: left;
+    border-style: solid;
+    border-radius: 10%;
+    border-color:#6D8BC9;
+    border-width: 8px;
+    background-color: rgba(255, 255, 255, .6);
+    text-align: center;
+}
+.space {
+    margin: 15px;
+}
+a {
+    text-decoration: none;
+    color:inherit;
+}
+.hometop {
+    position: absolute;
+    padding-right: 5%;
+    padding-left: 5%;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.hover:hover {
+    filter:brightness(75%) blur(0.75px);
+    border-color:#E3BA41;
+    color: #E3BA41;
+    cursor: pointer;
+}
+.nav{
+    position: absolute;
+    top: 65px;
+    left: -975px;
+    width: 500px;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+.navbox{
+    padding: 2px;
+    border-bottom-style: solid;
+    border-radius: 10%;
+    border-color:#6D8BC9;
+    border-width: 8px;
+}
+.navbox:hover{
+    cursor: pointer;
+}
+.homebottom {
+    display: flex;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 200px;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+}
+.side {
+    z-index: 3;
+    filter: blur(0.25px);
+    position: absolute;
+    left: -1710px;
+    top: -313px;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    position: absolute;
+    display: block;
+    width: 500px;
+    height: 510px;
+    background-color: transparent;
+    transform: translate(-50%,-50%);
+    left:680px;
+    top: 650px;
+    color: #91A7D4;
+}
+.whitebox{
+    position: relative;
+    display: block;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0px auto;
+    border-radius: 15px;
+    background-color: white;
+    transform: none;
+}
+.center{
+    text-align: center;
+    text-indent: 0px;
+    padding: 0px;
+}
+.select{
+    display: flex;
+    width: 65%;
+    justify-content: center;
+    position: relative;
+    left: 17.5%;
+    transform: translateY(25px);
+}
+.route_bus{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 15%;
+}
+#back:hover,#next:hover,.ArrowLeft:hover,.ArrowRight:hover,#submit:hover{
+    cursor: pointer;
+    filter: brightness(80%);
+}
+h3{
+    font-size: 60px;
+}
+h4{
+    font-size: inherit;
+    text-indent: 5px;
+    font-size: 20px; 
+    font-weight: bold;
+    text-align: left;
+    padding-left: 10px;
+    margin: 0px;
+}
+input{
+    width: 50%;
+    font-family: monospace;
+    color: #4C72BF;
+    font-weight: bold;
+    border: inherit;
+    font-size: 19px;
+    background-color: transparent;
+    position: inherit;
+}
+textarea{
+    overflow:hidden;
+    background-color: transparent;
+    transform: translate(-1px,-24px);
+    color: #4C72BF;
+    font-size: 19px;
+    text-indent: 100px;
+    font-weight: bold;
+    border: none;
+    resize: none;
+}
+ul{
+    width:90%;
+    position: absolute;
+    top:-1%;
+    visibility: hidden;
+}
+li{
+    font-size: 20px;
+    list-style-type: none;
+    text-align: left;
+    text-indent: 30px;
+    background-image: url(../img/bluearrow.png);
+    background-repeat: no-repeat;
+    background-size: 5%;
+    margin-top: 10px;
+}
+
+
+
+#navsign_pg{
+    visibility: hidden;
+}
+
+#navroute_pg{
+    visibility: hidden;
+}
+
+
+
+#clubname{top: 40px;}
+#bird {
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+}
+
+#bar {
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 28%;
+    top: 21%;
+}
+#bar:hover{
+    cursor: pointer;
+    filter: brightness(80%);
+}
