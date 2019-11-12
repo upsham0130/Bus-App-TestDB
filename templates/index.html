@@ -2,179 +2,58 @@
 
 {% block head %}
 
-  <link rel = "stylesheet" href="{{ url_for('static', filename='css/stuff.css') }}">
-  <script defer src="{{ url_for('static', filename='js/code.js') }}"></script>
-  <link rel="shortcut icon" href="{{ url_for('static', filename='img/website.png') }}" />
+    <link rel="shortcut icon" type="image/x-icon" href="../static/images/techlogo.png" />
+    <link rel = "stylesheet" href = "../static/css/styles.css" type ="text/css"/>
+    <script async defer src="../static/js/buses.js"></script>
 
 {% endblock %}
 
 {% block body %}
 
+<div id = "content" class = "">
+    <nav id = "mainNav">
+        <ul>
+            <li><div id="SignIn" data-width="100"  data-longtile="true"class="g-signin2" data-onsuccess="onSignIn"></div></li>
+            <li><a class = "active navItem" href = "{{ url_for('index') }}">Sign Up</a></li>
+            <li><a class = "navItem" href = "{{ url_for('routes') }}">Routes</a></li>
+        </ul>
+    </nav>  
 
-<div id = "bird">
-    <img height = 600px src="{{ url_for('static', filename='img/bird.png') }}">
-</div>
-<div class = "nav">
-    <img id="navsign" onmouseover='change(this,"../static/img/boardY.png",true);' onmouseout='change(this,"../static/img/board.png",false);' height = 80px class = "navbox" src="../static/img/board.png">
-    <img id="navroute" onmouseover='change(this,"../static/img/mapY.png",true);' onmouseout='change(this,"../static/img/map.png",false);' height = 80px class = "navbox" src="../static/img/map.png">
-    <a href="https://www.nbtschools.org/" target="_blank"><img onmouseover='change(this,"../static/img/websiteY.png",true);' onmouseout='change(this,"../static/img/website.png",false);' height = 80px class = "navbox" src="../static/img/website.png"></a>
-</div>
-<div id="hub">
-    <div class = "hometop">
-        <div class = "box">
-            <h1>North Brunswick</h1>
-            <h1>Township High School</h1>
-            <h2 class="space">Late Bus Signup</h2>
-        </div>
-    </div>
 
-    <div class = "homebottom">
-        <div onmouseover='change(this,"../static/img/boardY.png");' onmouseout='change(this,"../static/img/board.png");' class = "box hover" id = "signup">
-            <img  src="../static/img/board.png" class="topspace" height=160px width=160px> <h1>Signup</h1>
-        </div>
-            
-        <div onmouseover='change(this,"../static/img/mapY.png");' onmouseout='change(this,"../static/img/map.png");' class = "box hover" id = "routes">
-            <img src="../static/img/map.png" class="topspace" height=160px width=160px> <h1>Routes</h1>
-        </div>
+    <div id = "iForm" class = "fadeIn animated">
+        <h1 id = "sTitle">Late Bus Signup</h1>
 
-        <a onmouseover='change(this,"../static/img/websiteY.png");' onmouseout='change(this,"../static/img/website.png");' href="https://www.nbtschools.org/" target="_blank" class = "box hover">
-                <img src="../static/img/website.png" class="topspace" height=160px width=160px> <h1>Website</h1>
-        </a>
+        <form >
+            <div class="row">
+    
+    
+                <input required placeholder = "Club Name"id="name" class="input" name="" type="text" value="" size="30"/><br/>
+    
+                <span id="name_validation" class="error_message"></span>
+            </div>
+           
+            <div class="row">
+                <input required id="teacher" placeholder = "Club Adviser" class="input" name="" type="text" value="" size="30"/><br/>
+                <span id="email_validation" class="error_message"></span>
+            </div>
+            <div class="row">
+                <textarea required class = "input" id="message" placeholder = "Reason" class="message" name=" rows="7" cols="30"></textarea><br/>
+                <span id="message_validation" class="error_message"></span>
+            </div>
+            <div class = "row">
+                    <select required class = "input">
+                        <option disabled selected value> -- Select a Bus -- </option>
+                        <option value = "bus1">Bus 1</option>
+                        <option value = "bus2">Bus 2</option>
+                        <option value = "bus3">Bus 3</option>
+                    </select>
+                </div>
+            <input onclick = "Buses.submit()"id="submit_button" type="submit" value="Submit"/>
+
+    </div>
+    <div id = "iRight">
+            <img src = "../static/images/raiderbird.png" alt = "raider" id = "raider"/>
     </div>
 </div>
-<div class="side">
-    <img src="../static/img/blue.png" height="1700px">
-    <img id = "bar" height="35px"src="../static/img/bar.png">
-    <div class="container" id="navsign_pg">
-        <h3 class="whitebox">Bus Signup</h3>
-        <form id="clubname">
-            <br><br>
-            <div class="whitebox" style="width: 75%;">
-                <h4>Club name: <input type = "text" name = "club"></h4> 
-            </div>
-            <br><br>
-            <div class="whitebox" style="width: 75%;">
-                <h4>Club advisor: <input type = "text" name = "clsub"></h4> 
-            </div>
-                <br><br>
-            <div class="whitebox" style="width: 75%; height: 70px;">
-                <h4>Reason: </h4><textarea maxlength=85 cols=33 rows=3 name = "club"></textarea>
-            </div>
-        </form>
-        <div class = "select">
-            <img class="ArrowLeft" src="../static/img/arrow.png" height=32px>
-            <div class="whitebox" style="width:60%; padding:0px 2px; height: 32px;">
-                <h4 class="center" style="padding-top: 3px;" id="sBus">--Select a Bus--</h4>
-            </div>
-            <img class="ArrowRight" src="../static/img/arrow.png" height=32px>
-        </div>
-        <h4 class="whitebox center" id="submit" style="width:25%; background-color: rgb(220, 220, 220); transform: translateY(40px); padding:5px;">Submit</h4>
-    </div>
-    <div class="container" id="navroute_pg">
-        <h3 class="whitebox">Routes</h3>
-        <div class="route_bus">
-            <img class="ArrowLeft" src="../static/img/arrow.png" height=46px>
-            <h4 class="whitebox" id="rBus" style="width:60%;padding-left:0px;padding-top:0;font-size:30px;border-top-left-radius:0;border-top-right-radius:0">Bus 1</h4>
-            <img class="ArrowRight" src="../static/img/arrow.png" height=46px>
-        </div>
-        <div class="whitebox" style="height: 65%; width: 90%; transform: translateY(30px);">
-                <ul class="bus1">
-                    <li> All along Hartland Commons</li>
-                    <li> Finnegans Lane and Sassafras</li>
-                    <li>Finnegans Lane and Gwyn</li>
-                    <li>Finnegans Lane and Petunia</li>
-                    <li>Thomas and Tulip</li>
-                    <li>Shawn CT.</li>
-                    <li>Todd Circle</li>
-                    <li>Broadway and Harold</li>
-                </ul>
-                <ul class="bus1">
-                    <li>2378 RT 27</li>
-                    <li> Ruth Rd, @ Lincoln Apts.</li>
-                    <li>Parkside and West Lake</li>
-                    <li>Hidden Lake and Riverbend</li>
-                    <li>Schmidt Lane and Wedgewood</li>
-                    <li>Schmidt Lane and Bel Court</li>
-                    <li>Nathan and Schmidt Lane</li>
-                    <li>Nathan and Willowbrook</li>
-                </ul>
-                <ul class="bus1">
-                    <li>Willowbrook and Hidden Lake</li>
-                    <li>Hidden Lake and Aaron</li>
-                    <li>Aaron and Linder</li>
-                    <li>Aaron and Garfield</li>
-                    <li>Aaron and Thatchwood</li>
-                    <li>Edwin and Truman</li>
-                    <li>Driscoll Ct. and Driscoll Rd.</li>
-                    <li>Green St.</li>
-                </ul>
-                <ul class="bus2">
-                    <li>Pardun and Leary</li>
-                    <li>Lenox and Stelle</li>
-                    <li>Chrome and 4th</li>
-                    <li>Chrome and Allgair</li>
-                    <li>Thomas and Jefferson</li>
-                    <li>Nassau and Willow</li>
-                    <li>Remsen and Hollywood</li>
-                    <li>Linwood and Cleremont</li>
-                </ul>
-                <ul class="bus2">
-                    <li>Linwood School</li>
-                    <li>Linwood and Cranbury Crossroads</li>
-                    <li>Ridgewood and Newton</li>
-                    <li>Fleetwood and Livingston</li>
-                    <li>Newton and Patton</li>
-                    <li>LaRose St. and Delaware</li>
-                    <li>Oaktree Dr.</li>
-                    <li>Ohama and Redmond</li>
-                </ul>
-                <ul class="bus2">
-                    <li>Axel and Huron</li>
-                    <li>Axel and Seneca</li>
-                    <li>Axel and Carlise</li>
-                    <li>Axel and Poplar</li>
-                    <li>Princess and Orchard</li>
-                    <li>Arlington and Apache</li>
-                    <li>Jersey Ave.</li>
-                </ul>
-                <ul class="bus3">
-                    <li>Adams Ln (both sides)</li>
-                    <li>Adams and Eden</li>
-                    <li>Dillion Ct. (Go to the second entrance of the Renaissance by Walgreens)</li>
-                    <li>Renaissance and Timber Ridge</li>
-                    <li>Renaissance and Pin Oak</li>
-                    <li>Renaissance and Beacon Hill</li>
-                    <li>Renaissance and Springfield</li>
-                </ul>
-                <ul class="bus3">
-                    <li>Renaissance and N-E Intersection</li>
-                    <li>Renaissance and Azalea</li>
-                    <li>Renaissance and Lindsay</li>
-                    <li>Morris and Eagle</li>
-                    <li>Morris and Palmetto</li>
-                    <li>Morris and Marc</li>
-                    <li>Deerbrook and Clubhouse</li>
-                    <li>Deerbrook and Longfellow</li>
-                </ul>
-                <ul class="bus3">
-                    <li>Church lane (Both ways)</li>
-                    <li>Lake Dr. and Old Georges Road</li>
-                    <li>Old Georges and Pine Meadow</li>
-                    <li>Old Georges and Golden Valley</li>
-                    <li>Old Georges and Peppermint Hill</li>
-                    <li>Wood and Miriam</li>
-                    <li>Edlys and Miriam</li>
-                    <li>Farrington and Hoover</li>
-                </ul>
-                <ul class="bus3">
-                    <li>Farrington and Schweitzer</li>
-                    <li>Mount Drive</li>
-                </ul>
-            <div style="display:flex;justify-content:space-between;position: absolute;width: 90%;left:5.55%;top:88%;">
-                <img id="back" src="../static/img/back.png" height=30px>
-                <img id="next" src="../static/img/next.png" height=30px>
-            </div>
-        </div>
-    </div>
-</div>
+
 {% endblock %}

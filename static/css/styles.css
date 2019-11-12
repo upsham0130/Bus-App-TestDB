@@ -1,0 +1,313 @@
+body {
+    background:linear-gradient(to right, rgb(255, 204, 0) 0%,rgb(255, 204, 38) 50%,rgb(0, 51, 153) 0%, rgb(0, 51, 153) 50% );
+    font-family: Verdana, sans-serif;
+
+}
+*:focus {
+    outline: none;
+}
+
+#content {
+    background:white;   
+    width:70%;
+    min-height:70%;
+    position:absolute;
+    border-radius:30px;
+    box-shadow: 0px 8px 8px 0px #464444;
+    left:15%;
+    top:15%;
+  
+}
+
+
+
+nav ul li {
+    float:right;
+    padding-right:50px;
+}
+
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 10px 10px 0;
+}
+
+nav {
+    height: 75px;
+    height:10%;
+}
+#mainNav li:first-child  {
+    float:left;
+    padding-top:1%;
+    padding-left:1%;
+}
+
+nav li {
+    display:inline;
+    font-size:0.8em;
+}
+
+
+nav li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 15px 0;
+    text-decoration: none;
+    width:110%;
+    font-size:1.2em;
+    height:50%;
+
+
+}
+
+nav a { 
+
+    border-color: rgba(255,255,255,0)
+}
+.active {
+
+
+    color: rgb(54, 54, 201);
+}
+
+nav li a:hover {
+    border-bottom:0.1px solid currentColor;
+}
+
+
+
+
+
+
+.rContainer {
+    margin-top:0;
+    padding-top:0;
+    width:50%;
+    float:left;
+}
+
+.slideB ul li {
+    list-style-type: none;
+    position:inline-block;
+    padding-top:0;
+    font-size:1.01em;
+    -webkit-column-break-inside: avoid;
+            page-break-inside: avoid;
+                 break-inside: avoid;
+    
+}
+
+.slideB {
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+.slideB ul {
+    -moz-column-count: 2;
+    -moz-column-gap: 30px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 30px;
+    column-count: 2;
+    column-gap: 30px;
+
+}
+
+#busTwo, #busThree{
+    display:none;
+}
+
+.titles {
+    text-align:center;
+    font-size:2em;
+    cursor:pointer;
+    user-select:none;
+    background-image:linear-gradient(to left, rgb(186, 186, 229),rgb(50, 50, 223));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-color:blue;
+}
+
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 15%;
+    width: auto;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+
+
+.prev:hover, .next:hover {
+    color: rgba(0,0,0,0.8);
+}
+.next {
+    position:inline-block;
+    top:16%;
+    left:29.8%;
+    width:1.5%;
+}
+.prev {
+    position:inline-block;
+    top:16%;
+    left:19%;
+    width:1.5%;
+}
+
+#rRight {
+    float:right;
+    width:50%;
+}   
+
+#nbMap {
+    max-width:80%;
+    padding-left:10%;
+    padding-top:10%;
+
+}
+
+
+#iForm{
+    margin-top:0;
+    padding-top:0;
+    width:50%;
+    text-align:center;
+    font-family: 'Courier', monospace;
+    float:left;
+
+}
+
+
+
+
+.input {
+    border-radius:10px;
+    height:10%;
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:5px;
+    border:none;
+    box-shadow: 3px 2px 5px 5px #ece6e6;
+
+}
+#message {
+    height:100px;
+}
+
+.row {
+    padding-bottom:20px;
+}
+#submit_button {
+    margin:15px;
+    display: inline-block;
+    border-radius:10px;
+    border:none;
+    background-image:linear-gradient(to left, rgb(107, 107, 202),rgb(83, 83, 216));
+    min-width:15%;
+    color:white;
+    box-shadow: 3px 3px 0px 0px #f1ecec;
+    width:auto;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+#submit_button:hover {
+    background-image:linear-gradient(to left, rgb(107, 107, 202),rgb(65, 65, 211));
+}
+#sTitle {
+    background-image:linear-gradient(to left, rgb(107, 107, 202),rgb(83, 83, 216));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+#raider {
+    max-width:50%;
+    padding-top:10%;
+    padding-left:20%;
+}
+#iRight {
+    float:right;
+    position:inline-block;
+    width:50%;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        font-size:75%;
+    }
+    nav {
+        width:100%; 
+    }
+    #mainNav li:first-child {
+        float:right;
+    }
+    #mainNav .active {
+        display:none;
+    }
+    #raider {
+        display:none;
+    }
+    #rNav {
+        text-align:center;
+    }
+    .prev,.next {
+        display:none;
+    }
+    #iForm {
+        float:none;
+        top:10%;
+        width:100%;
+    }
+    #navTitle {
+        display:none;
+    }
+    #submit_button {
+        border:solid;
+        border-width: 0.5px;
+        border-color: black;
+    }
+    .input {
+        border:solid;
+        border-width: 0.5px;
+        border-color: black;
+    }
+    nav ul li {
+        padding-right:0;
+        float:none;
+        display:inline-block;
+        text-align:center;
+        padding-left:5%;
+        padding-right:5%;
+    }
+    #sTitle {
+        padding-top:3%;
+    }
+    #nbMap {
+        display:none;
+    }
+    .rContainer {
+        width:100%;
+    }
+    
+    .slideB ul {
+        -moz-column-count: 1;
+        -moz-column-gap: 30px;
+        -webkit-column-count: 1;
+        -webkit-column-gap: 30px;
+        column-count: 0;
+        column-gap: 30px;
+
+    }
+    .routes {
+        padding-left:8%;
+    }
+  
+
+}

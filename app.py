@@ -7,6 +7,10 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+@app.route('/routes')
+def routes():
+    return render_template("routes.html")
+
 @app.route('/addStudent', methods = ['POST'])
 def addStudent():
     sName = request.form['sName']
@@ -15,4 +19,4 @@ def addStudent():
     return redirect(url_for('index'))
 
 if __name__ == "__main__":
-    app.run(debug=True) 
+    app.run(debug=True)
