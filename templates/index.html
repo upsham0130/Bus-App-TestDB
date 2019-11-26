@@ -1,39 +1,54 @@
 {% extends 'base.html' %}
 
 {% block head %}
-
-    <link rel="shortcut icon" type="image/x-icon" href="../static/images/techlogo.png" />
-    <link rel = "stylesheet" href = "../static/css/styles.css" type ="text/css"/>
-    <script async defer src="../static/js/buses.js"></script>
-
 {% endblock %}
 
 {% block body %}
 
-<div id = "content" class = "">
-    <nav id = "mainNav">
+<img src = "../static/images/techlogo.png" alt = "techlogo" id = "tech"/>
+<nav id = "responsiveNav">
+    <div class = "hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <ul class = "nav-links">
+        <li><a href = "{{ url_for('index') }}">Sign Up</a></li>
+        <li><a href = "{{ url_for('routes') }}">Routes</a></li>
+        <li><a href = "{{ url_for('profile') }}">Profile</a></li>
+    </ul>
+</nav> 
+<div id = "content" class = "" >    
+    <nav id = "mainNav" class="desktopNav">
         <ul>
             <li><div id="SignIn" data-width="100"  data-longtile="true"class="g-signin2" data-onsuccess="onSignIn"></div></li>
-            <li><a class = "active navItem" href = "{{ url_for('index') }}">Sign Up</a></li>
-            <li><a class = "navItem" href = "{{ url_for('routes') }}">Routes</a></li>
+            <li><a href = "{{ url_for('index') }}" class="active">Sign Up</a></li>
+            <li><a href = "{{ url_for('routes') }}">Routes</a></li>
+            <li><a href = "{{ url_for('profile') }}">Profile</a></li>
         </ul>
-    </nav>  
-
-
-    <div id = "iForm" class = "fadeIn animated">
+    </nav> 
+    <div id = "iForm" class="iForm">
         <h1 id = "sTitle">Late Bus Signup</h1>
 
         <form >
-            <div class="row">
-    
-    
-                <input required placeholder = "Club Name"id="name" class="input" name="" type="text" value="" size="30"/><br/>
+            <div class= "row">
+                <select required class="input" id = "selAct" onchange='checkResponse();'>
+                    <option disabled selected value> --  Activity? -- </option>
+                    <option value = "club">Club</option>
+                    <option value = "sport">Sport</option>
+                    <option value = "extra_help">Extra Help</option>
+                    <option value = "detention">Detention</option>
+                    <option value = "other">Other</option>
+                </select>
+            </div>
+            <div class="row" style='display:none' id ="specifyRow">
+                <input  required placeholder = "Specify"id="specify" class="input" name="" type="text" value="" size="30"/><br/>
     
                 <span id="name_validation" class="error_message"></span>
             </div>
-           
-            <div class="row">
-                <input required id="teacher" placeholder = "Club Adviser" class="input" name="" type="text" value="" size="30"/><br/>
+            
+            <div class="row" style='display:none' id ="teacherRow">
+                <input  required id="teacher" placeholder = "" class="input" name="" type="text" value="" size="30"/><br/>
                 <span id="email_validation" class="error_message"></span>
             </div>
             <div class="row">
@@ -50,10 +65,13 @@
                 </div>
             <input onclick = "Buses.submit()"id="submit_button" type="submit" value="Submit"/>
 
-    </div>
-    <div id = "iRight">
-            <img src = "../static/images/raiderbird.png" alt = "raider" id = "raider"/>
-    </div>
 </div>
+<div id = "iRight">
+        <img src = "../static/images/techlogo.png" alt = "techlogo" id = "raider"/>
+</div>
+
+
+
+
 
 {% endblock %}

@@ -1,5 +1,17 @@
 "use strict";
 class Buses {
+    static onSignIn(googleUser) {
+        alert("SignedIn");
+        Buses.profile = googleUser.getBasicProfile();
+        const email = Buses.profile.getEmail();
+        Buses.id = email.substring(0, email.lastIndexOf("@"));
+        if (!email.endsWith("nbtschools.org")) {
+            alert("Not a valid google account");
+            throw new Error("Not a valid google account");
+        }
+        const divButton = document.getElementById("SignIn");
+        divButton.hidden = true;
+    }
     static submit() {
         alert("Submission");
         const busList = document.getElementsByName("bus");
